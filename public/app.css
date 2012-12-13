@@ -1,0 +1,27 @@
+.title {
+  font-weight: bold;
+}
+
+.description {
+  margin-top: 10px;
+}
+
+.section {
+  margin-top: 10px;
+}
+
+.creator {
+  margin-left: 10px;
+}
+
+.copyright {
+  font-style: oblique;
+}
+
+.subject {
+  margin-left: 10px;
+}
+
+.educationLevel {
+  margin-left: 10px;
+}

@@ -1,5 +1,6 @@
 %html
   %head
-    %title= "About"
+    %title= "About: #{@app_info[:title].first}"
+    %link{:rel => "stylesheet", :href => "/app.css", :type => "text/css"}
   %body
     = yield

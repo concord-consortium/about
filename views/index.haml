@@ -1,5 +1,14 @@
-This is some info about:
-= @app
 .info
-  %code
-    = @app_info.inspect
+  .title= @app_info[:title].join('<br/>')
+  .description= @app_info[:description].join('<br/>')
+  .section
+    .title= "Subject matter:"
+    .subject= @app_info[:subject].join('<br/>')
+  .section
+    .title= "Education Level:"
+    .educationLevel= @app_info[:educationLevel].join('<br/>')
+  .section
+    .title= "Created by:"
+    .creator= @app_info[:creator].join('<br/>')
+  .section
+    .copyright= @app_info[:copyright].join('<br/>')

@@ -2,10 +2,33 @@ require 'open-uri'
 
 set :haml, :format => :html5 # default Haml format is :xhtml
 
+NSDL_INFO_ITEMS = [
+  {:key => :lastModified, :tag => "recordDate"},
+  {:key => :title, :tag => "title"},
+  {:key => :description, :tag => "description"},
+  {:key => :subject, :tag => "subject"},
+  {:key => :educationLevel, :tag => "educationLevel"},
+  {:key => :type, :tag => "type"},
+  {:key => :license, :tag => "license"},
+  {:key => :copyright, :tag => "copyright"},
+  {:key => :creator, :tag => "contributor[role=\"Creator\"]"},
+]
+
 helpers do
+  def extract(tag, xml)
+    tag.sub!(/\[(.*?)\]/, '')
+    attrs = $1 ? (" " + $1) : ""
+    regexp = Regexp.compile("<#{tag}#{attrs}>(.*?)<\/#{tag}>", Regexp::MULTILINE)
+    return xml.scan(regexp).flatten.compact.uniq
+  end
+
   def nsdl_info(app)
     app_xml = open("http://ncs.concord.org/ncs/services/oai2-0?verb=GetRecord&metadataPrefix=lar&identifier=#{app}").read
-    return app_xml
+    app_info = {}
+    NSDL_INFO_ITEMS.each do |item|
+      app_info[item[:key]] = extract(item[:tag], app_xml)
+    end
+    return app_info
   end
 end
 
