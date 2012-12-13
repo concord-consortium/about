@@ -15,8 +15,8 @@ NSDL_INFO_ITEMS = [
 ]
 
 helpers do
-  def extract(tag, xml)
-    tag.sub!(/\[(.*?)\]/, '')
+  def extract(rawTag, xml)
+    tag = rawTag.sub(/\[(.*?)\]/, '')
     attrs = $1 ? (" " + $1) : ""
     regexp = Regexp.compile("<#{tag}#{attrs}>(.*?)<\/#{tag}>", Regexp::MULTILINE)
     return xml.scan(regexp).flatten.compact.uniq
