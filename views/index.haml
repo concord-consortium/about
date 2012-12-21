@@ -12,4 +12,4 @@
     %dd.funder= @app_info[:funder].join(', ')
     %dd.funderGrant= "Grant#{@app_info[:grantNumber].size > 1 ? "s" : ""}: #{@app_info[:grantNumber].join(', ')}"
   %p.disclaimer= "This material is based upon work supported by #{funder_names}. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of #{funder_names}."
-  %p.copyright= @app_info[:copyright].join('<br/>')
+  %p.copyright= @app_info[:copyright].join('<br/>').gsub(/©/, '&copy;').gsub(/\(c\)/, '&copy;')
