@@ -12,6 +12,8 @@ NSDL_INFO_ITEMS = [
   {:key => :license, :tag => "license"},
   {:key => :copyright, :tag => "copyright"},
   {:key => :creator, :tag => "contributor[role=\"Creator\"]"},
+  {:key => :funder, :tag => "contributor[role=\"Funder\"]"},
+  {:key => :grantNumber, :tag => "otherIdentifier[type=\"NSF Grant No.\"]"}
 ]
 
 helpers do
@@ -29,6 +31,24 @@ helpers do
       app_info[item[:key]] = extract(item[:tag], app_xml)
     end
     return app_info
+  end
+
+  def funder_names
+    out = ""
+    @app_info[:funder].each_with_index do |funder, i|
+      if i == 0
+        out << funder
+      elsif i == (@app_info[:funder].size - 1)
+        if i == 1
+          out << " and #{funder}"
+        else
+          out << ", and #{funder}"
+        end
+      else
+        out << ", #{funder}"
+      end
+    end
+    return out
   end
 end
 
