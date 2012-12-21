@@ -1,20 +1,15 @@
-.info
-  .title= @app_info[:title].join('<br/>')
-  .description= @app_info[:description].join('<br/>')
-  .section
-    .title= "Subject matter:"
-    .subject= @app_info[:subject].join('<br/>')
-  .section
-    .title= "Education Level:"
-    .educationLevel= @app_info[:educationLevel].join('<br/>')
-  .section
-    .title= "Created by:"
-    .creator= @app_info[:creator].join('<br/>')
-  .section
-    .title= "Funded by:"
-    .funder= @app_info[:funder].join(', ')
-    .funderGrant= "Grant#{@app_info[:grantNumber].size > 1 ? "s" : ""}: #{@app_info[:grantNumber].join(', ')}"
-  .section
-    .disclaimer= "This material is based upon work supported by #{funder_names}. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of #{funder_names}."
-  .section
-    .copyright= @app_info[:copyright].join('<br/>')
+#info
+  %h1= @app_info[:title].join('<br/>')
+  %p.description= @app_info[:description].join('<br/>')
+  %dl
+    %dt= "Subject Matter"
+    %dd.subject= @app_info[:subject].join('<br/>')
+    %dt.title= "Education Level"
+    %dd.educationLevel= @app_info[:educationLevel].join('<br/>')
+    %dt.title= "Created by"
+    %dd.creator= @app_info[:creator].join('<br/>')
+    %dt.title= "Funded by"
+    %dd.funder= @app_info[:funder].join(', ')
+    %dd.funderGrant= "Grant#{@app_info[:grantNumber].size > 1 ? "s" : ""}: #{@app_info[:grantNumber].join(', ')}"
+  %p.disclaimer= "This material is based upon work supported by #{funder_names}. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of #{funder_names}."
+  %p.copyright= @app_info[:copyright].join('<br/>')

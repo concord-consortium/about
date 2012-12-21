@@ -1,35 +1,67 @@
-.title {
-  font-weight: bold;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
-
-.description {
-  margin-top: 10px;
-}
-
-.section {
-  margin-top: 10px;
-}
-
-.creator {
-  margin-left: 10px;
-}
-
-.copyright {
-  font-style: oblique;
-}
-
-.subject {
-  margin-left: 10px;
-}
-
-.educationLevel {
-  margin-left: 10px;
-}
-
-.funder {
-  margin-left: 10px;
-}
-
-.funderGrant {
-  margin-left: 10px;
-}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+	}
+body {
+	background: #bddfdf;
+	color: #3f3f3f;
+	font: 85% 'museo-sans', arial, helvetica, sans-serif;
+	line-height: 1;
+	}
+dt {
+	color: #86b355;
+	font: 700 1em 'museo-slab', georgia, times, 'times new roman', serif;
+	}
+dd { margin: 0 0 1em; }
+h1 {
+	color: #ee864e;
+	font: 700 2em 'museo-sans', georgia, times, 'times new roman', serif;
+	}
+p {
+	line-height: 150%;
+	margin: 1em 0;
+	}
+p.copyright {
+	background: transparent url(cc-logo.gif) no-repeat right top;
+	color: #555;
+	font-size: .9em;
+	margin: 1.7em 0 0;
+	min-height: 45px;
+	padding: 12px 160px 0 0;
+	}
+p.disclaimer { font-style: italic; }
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	}
+#info {
+	background: #fff;
+	margin: 20px auto;
+	padding: 20px;
+	width: 48em;
+	-moz-border-radius: 13px;
+	-webkit-border-radius: 13px;
+	border-radius: 13px;
+	}

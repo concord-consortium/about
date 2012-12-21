@@ -1,6 +1,12 @@
-%html
+!!! XML
+!!!
+%html{:lang => "en"}
   %head
+    %meta{:charset => "utf-8"}
     %title= "About: #{@app_info[:title].first}"
+    %script{:src => "https://use.typekit.com/hdw8ayt.js"}
+    %script
+      try{Typekit.load();}catch(e){}
     %link{:rel => "stylesheet", :href => "/app.css", :type => "text/css"}
   %body
     = yield
