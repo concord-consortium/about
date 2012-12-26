@@ -50,6 +50,10 @@ helpers do
     end
     return out
   end
+
+  def has(key)
+    return @app_info[key] && @app_info[key].size > 0
+  end
 end
 
 get '/:app' do
