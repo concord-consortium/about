@@ -55,5 +55,6 @@ end
 get '/:app' do
   @app = params[:app]
   @app_info = nsdl_info(@app)
+  @app_info[:copyright] = ["&copy; Copyright #{Time.now.year} The Concord Consortium"] unless @app_info[:copyright].size > 0
   haml :index
 end
